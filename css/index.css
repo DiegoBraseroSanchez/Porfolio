@@ -1,0 +1,794 @@
+@charset "UTF-8";
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  vertical-align: baseline;
+}
+
+/* Evitamos problemas con las imagenes */
+img, picture, video, iframe, figure {
+  max-width: 100%;
+  width: 100%;
+  display: block;
+}
+
+/* Reseteamos los enlaces para funcionar como cajas... */
+a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  font-size: inherit;
+}
+
+/* ... excepto los que se encuentran en párrafos */
+p a {
+  display: inline;
+}
+
+/* Quitamos los puntos de los <li> */
+li {
+  list-style-type: none;
+}
+
+/* Configuramos anclas suaves */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Desactivamos estilos por defecto de las principales etiquetas de texto */
+h1, h2, h3, h4, h5, h6, p, span, a, strong, blockquote, i, b, u, em {
+  font-size: 1em;
+  font-weight: inherit;
+  font-style: inherit;
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Evitamos problemas con los pseudoelementos de quotes */
+blockquote:before, blockquote:after, q:before, q:after {
+  content: "";
+  content: none;
+}
+
+/* Configuramos el texto que seleccionamos */
+::-moz-selection {
+  background-color: var(--negro);
+  color: var(--blanco);
+}
+::selection {
+  background-color: var(--negro);
+  color: var(--blanco);
+}
+
+/* Nivelamos problemas de tipografías y colocación de formularios */
+form, input, textarea, select, button, label {
+  font-family: inherit;
+  font-size: inherit;
+  -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+          hyphens: auto;
+  background-color: transparent;
+  color: inherit;
+  display: block;
+  /* opcional */
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+
+/* Reseteamos las tablas */
+table, tr, td {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Evitamos problemas con los SVG */
+svg {
+  width: 100%;
+  display: block;
+  fill: currentColor;
+}
+
+/* (Probándolo, no usar en producción) En el caso de añadir una  */
+/* p svg{
+  display: inline;
+  width: initial;
+} */
+/* Configuramos la tipografía para toda la web */
+body {
+  min-height: 100vh;
+  font-size: 100%;
+  font-family: Helvetica, Arial, sans-serif;
+  color: var(--negro);
+  /* opcional */
+  -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+          hyphens: auto;
+  /* opcional */
+  font-smooth: always;
+  /* opcional */
+  -webkit-font-smoothing: antialiased;
+  /* opcional */
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+
+ 
+.header{
+    width: 100vw;
+    height: 100vh;
+    background-image: url(../assets/header-background.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: white;
+  }
+
+  /*HEADER ENCABEZADO*/
+.cabecera{
+  /*background-color: #00DDFF;*/
+}
+
+.cabecera-ul{
+   width: 90%;
+   display: flex;
+   flex-flow: row wrap;
+   justify-content: center;
+   align-items: center;
+   margin: auto;
+   font-size: 2.5vh;
+   font-weight: 600;
+   gap: 1.25rem;
+   padding-top: 2rem;
+   color: white;
+}
+.cabecera-li{
+   /*background-color: #00DDFF;*/
+}
+
+.cabecera-a{
+   transition: transform .2s ease;
+}
+.cabecera-a:hover{
+   transform: scale(1.3);
+}
+.cabecera-a::after{
+   content: "";
+   width: 100%;
+   height: .1875rem;
+   background-color:rgb(255, 76, 27);
+   transform: scaleX(0);
+   transform-origin: left;
+   transition: all .4s ease;
+   transition: transform .2s ease;
+}
+
+.cabecera-a:hover::after{
+   transform: scaleX(1);
+}
+.cabecera-a:active{
+   transform: scale(1.3);
+   color: orangered;
+}
+@media (max-width:900px){
+   .cabecera-nav{
+       width: 100%;
+       display: none;
+   }
+}
+.Header{
+   width: 100%;
+   height: 6.25rem;
+  
+}
+.container{
+   width: 90%;
+   max-width: 75rem;
+   margin: auto;
+}
+.container .btn-menu{
+   float: right;
+   line-height:6.25rem;
+   display: none;
+
+}
+@media(max-width:900px){
+   .container .btn-menu{
+       display: block;
+   }
+}
+.container .btn-menu label{
+   color: #fff;
+   font-size: 1.5625rem;
+   cursor: pointer;
+}
+.container .menu{
+   float: right;
+   line-height: 6.25rem;
+}
+.container .menu a{
+   display: inline-block;
+   padding: .9375rem;
+   line-height: normal;
+   text-decoration: none;
+   color: #fff;
+   transition: all 0.3s ease;
+   border-bottom: .125rem solid transparent;
+   font-size: .9375rem;
+   margin-right: .3125rem;
+}
+.container .menu a:hover{
+   border-bottom: .125rem solid #c7c7c7;
+   padding-bottom: .3125rem;
+}
+.cont-menu nav a:active{
+   color: orange
+}
+.cont-menu label{
+   position: absolute;
+   right: .3125rem;
+   top: .625rem;
+   color: #fff;
+   cursor: pointer;
+   font-size: 18px;
+}
+/*Fin de Estilos para el encabezado*/
+
+/*Menù lateral*/
+#btn-menu{
+   display: none;
+
+}
+.container-menu{
+   position: absolute;
+   background: rgba(0,0,0,0.5);
+   width: 100%;
+   height: 100vh;
+   top: 0;left: 0;
+   transition: all 500ms ease;
+   opacity: 0;
+   visibility: hidden;
+   z-index: 3;
+}
+
+#btn-menu:checked ~ .container-menu{
+   opacity: 1;
+   visibility: visible;
+}
+.cont-menu{
+   width: 100%;
+   max-width: 15.625rem;
+   background: #1c1c1c;
+   height: 100vh;
+   position: relative;
+   transition: all 500ms ease;
+   transform: translateX(-100%);
+   display: block;
+}
+#btn-menu:checked ~ .container-menu .cont-menu{
+   transform: translateX(0%);
+}
+.cont-menu nav{
+   transform: translateY(15%);
+}
+.cont-menu nav a{
+   display: block;
+   text-decoration: none;
+   padding: 1.25rem;
+   color: #c7c7c7;
+}
+.cont-menu label{
+   position: absolute;
+   right: .3125rem;
+   top: .625rem; 
+}
+@media(max-width:980){
+   .cont-menu{
+       display: block;
+   }
+}
+.Redes{
+  display: flex;
+  justify-content: center;
+  flex-flow: row nowrap;
+  align-items: center;
+}
+.Redes-icon{
+  color: wheat;
+  
+  width: 1em;
+  
+}
+/*Fin de Menù lateral*/
+
+  
+#main{
+    margin: 0 auto;
+    width: 80vw;
+    height: 80vh;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    align-items: center;
+    gap: 2em;
+}
+  
+.content-h1{
+    font-size: 3em;
+}
+.content-h2{
+    font-size: 2em;
+    color:  rgb(232, 83, 19);
+}  
+.content-span{
+    color:  rgb(232, 83, 19);
+}
+  
+ 
+.content-img{
+    border:  7px solid  rgb(232, 83, 19);
+    width: 350px;
+    height: 520px;
+    object-fit: cover;
+    z-index: 1;
+}
+  
+#about{
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    width: 100vw;
+    align-items: center;
+    background-color: rgba(12, 12, 12, 0.884);
+    
+}
+.about-img{
+    width: 100%;
+    grid-column: 1/5;
+  }
+  
+.about-info {
+    grid-column: 5/10;
+    padding: 3em;
+  }
+  
+.about-h2{
+    font-size: 2em;
+    color: rgb(232, 83, 19);
+  }
+  
+
+.about-p{
+    margin-bottom: 1em;
+    color: white;
+  }
+  
+
+.portfolio-h2{
+    font-size: 2.5em;
+    color: #fff;
+  }
+  
+.portfolio .container {
+    width: 80vw;
+    height: 80vh;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+.card {
+    width: 300px;
+    background-color: #2b3058;
+    margin: 1em;
+  }
+  
+.card-img1{
+    width: 100%;
+    height: 150px;
+    background-image: url(../assets/Anotación\ 2023-04-11\ 210644.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+}
+.card-img2{
+    width: 100%;
+    height: 150px;
+    background-image: url(../assets/grid.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.card-img3{
+    width: 100%;
+    height: 150px;
+    background-image: url(../assets/counteract.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.card-title {
+    padding: 20px;
+}
+.card-proyect-links {
+    display: flex;
+    justify-content: space-evenly;
+}
+.card-proyect-links a {
+    color: #fff;
+    text-decoration: none;
+}
+.button-content {
+    display: flex;
+    justify-content: center;
+    margin: 1em;
+}
+.portfolio,.contact-section {
+    width: 100vw;
+    background-image: url(../assets/header-background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+}
+  
+.portfolio-heading {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 5em;
+}
+  
+  
+#portfolio-h2{
+    font-size: 2.5em;
+    color: #fff;
+}
+ 
+.portfolio .container {
+    width: 80vw;
+    height: 80vh;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+  
+.card{
+    width: 300px;
+    background-color: #71634f;
+    margin: 1em;
+}
+.card-title{
+    padding: 20px;
+}
+  
+.card-proyect-links {
+    display: flex;
+    justify-content: space-evenly;
+   
+}
+.card-proyect-links a {
+    color: #fff;
+    text-decoration: none;
+}
+  
+.card-proyect-links i {
+    font-size: 1.5em;
+}
+  
+.button-content {
+    display: flex;
+    justify-content: center;
+    margin: 1em;
+  }
+  
+.project-details-button a {
+    text-decoration: none;
+    color: #191c32;
+}
+  
+.contact-section {
+    padding: 3em;
+}
+  
+.container-contact {
+    margin: 0 auto;
+    margin-top: 10em;
+}
+#footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 200px;
+    padding: 2em;
+    background-color: rgb(6, 7, 7);
+    color: white;
+  }
+  
+.content-h2{
+    font-size: 3em;
+  }
+  
+.content-h5 {
+    font-size: 1.5em;
+    text-align: center;
+}
+.content-p{
+  padding-top: 12px;
+  font-size: 2rem;
+}
+.Rrss-ul{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1.25rem;
+    margin: 2.5rem 0 2.5rem;
+    transition: transform .2s ease;
+}
+.Rrss-icon:hover{
+    transform: scale(1.8);
+    color: rgb(249, 121, 2);
+}    
+.Rrss-icon{
+    width: 2em;
+    color: white;
+    transition: transform .2s ease;
+}
+.Rrss-li{}
+
+.Main-columnas{
+  /*background-color: #8A2BE2;*/
+  width: 100%;
+}
+/* El código anterior define una clase CSS llamada "Columnas-wrapper" que configura un diseño de
+cuadrícula con columnas que tienen un ancho mínimo de 28,91 rem y un ancho máximo de 1fr (lo que
+significa que las columnas ocuparán el mismo espacio dentro de la cuadrícula) . Las filas ajustarán
+su altura en función de su contenido, con una altura mínima de 18,75 rem. La propiedad "brecha"
+establece una brecha de 1,25 rem entre las columnas. Esta clase se puede aplicar a un elemento
+contenedor para crear un diseño de cuadrícula con anchos de columna flexibles y alturas de fila
+automáticas. */
+.Columnas-wrapper{
+  display: grid;
+  grid-template-columns:repeat(auto-fill,minmax(28.91rem, 1fr));
+  grid-auto-rows: minmax(18.75rem, auto);
+  gap: 1.25rem;
+}
+@media (max-width:911px){
+  .Columnas-wrapper{
+      flex-direction: column;
+      padding-top: 3.75rem;
+      padding-bottom: 3.75rem;
+  }
+}
+/* El código anterior define los estilos CSS para una sección con la clase "Columnas-section".
+Establece el relleno en 2,5 rem, el ancho en 100 % y la altura mínima en 25 rem. También establece
+la posición en relativa. Además, hay un @Media que se aplica cuando el ancho máximo es
+de 474px, lo que cambia el ancho al 80 %. */
+.Columnas-section{
+  padding: 2.5rem;
+  width: 100%;
+  min-height: 25rem;
+  position: relative;
+}
+@media(max-width:474px){
+  .Columnas-section{
+      width: 80%;
+  }
+}
+/*"Slider-img". Establece la posición en absoluto, la opacidad en 0 y aplica un efecto de animación
+para desvanecerse en la imagen durante 1,4 segundos. También establece el ancho al 100 % y utiliza
+la ruta de recorte para crear una forma de polígono para la imagen. */
+.Slider-img{
+  /*background: orangered;*/
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  width:100%;
+  height: auto;
+  animation: fadeIn 1.4s ease;
+  /*background-color: aquamarine;*/
+  display:block;
+  clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+}
+.Slider-img.isActive{
+  opacity: 1;
+}
+.Slider-img:nth-child(1){
+  position: static;
+}
+/*"Slider-btn".
+Establece el ancho, la altura, el relleno, el radio del borde, el color de fondo, la posición y las
+propiedades del cursor del botón. También agrega un efecto de transición al botón cuando se
+transforma. */
+.Slider-btn{
+  width: 2rem;
+  height: 2rem;
+  padding: .5rem;
+  border-radius: 50%;
+  background-color: rgb(249, 121, 2);
+  position: absolute;
+  bottom: 12rem;
+  cursor: pointer;
+  transition: transform .5 ease;
+}
+.Slider-btn:hover{
+  transform: scale(.9);
+}
+.Slider-btn:active{
+  transform: scale(1.1);
+}
+/*".next" y ".prev".
+La clase ".next" se coloca a la derecha en un 28 % del ancho de su contenedor, mientras que la clase ".prev" se coloca a la
+izquierda en un 10 % del ancho de su contenedor. Además, hay un @Media que apunta a
+pantallas con un ancho máximo de 414px, que ajusta el posicionamiento de la clase ".prev" para que
+se alinee a la izquierda en un 14 % del ancho de su contenedor. Es probable que estos estilos se
+utilicen para colocar botones o flechas de navegación en una página web o */
+.next{
+  right:27%;
+}
+.prev{
+  left: 14%;
+}
+@media(max-width:414px){
+  .prev{
+      left: 14%;
+  }
+}
+.Slider-svg{}
+/*Columnas-img`
+100 % de su contenedor principal y el alto a automático, lo que significa que mantendrá su relación de aspecto.
+También aplica una animación de aparición gradual con una duración de 1,4 segundos y una función de temporización
+ease. Además, establece la propiedad de visualización en bloque y aplica una ruta de recorte para
+crear una forma de polígono con un borde inclinado en el lado derecho de la imagen. */
+.Columnas-img{
+  width:100%;
+  height: auto;
+  animation: fadeIn 1.4s ease;
+  /*background-color: aquamarine;*/
+  display:block;
+  clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+}
+/*`@keyframes fadeIn`
+Define una animación CSS que aumenta gradualmente la opacidad y aplica un efecto
+de desenfoque a un elemento. La animación comienza con una opacidad del 0 % y un desenfoque de 1,25
+rem, y con un 10 % de opacidad aumenta a 1 y el desenfoque se reduce a 0,625 rem. Esta animación se
+usa en la clase `.Columnas-img` para crear un efecto de aparición gradual cuando se carga la imagen. */
+@keyframes fadeIn{
+  0% {
+      opacity: 0;
+      filter: blur(1.25rem);
+  }
+  10%{
+      opacity: 1;
+      filter: brightness(2) blur(.625rem);
+  }
+}
+/*"Columnas-h3".
+Esta clase establece el color del texto en blanco, usa flexbox para alinear horizontalmente los elementos, agrega un espacio de 1,25
+rem entre los elementos y agrega relleno en la parte superior de 1,875 rem. También está agregando
+un margen de 7 rem a la derecha del elemento. */
+.Columnas-h3{
+  color: white;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  gap: 1.25rem;
+  padding:  1.875rem 0 0;
+  margin-right: 7rem;
+}
+/* El código anterior define una clase CSS llamada "Columnas-span". Esta clase establece el color en un
+tono naranja, usa flexbox para alinear horizontalmente sus elementos secundarios, agrega un margen y
+relleno en la parte superior y derecha del elemento. */
+.Columnas-span{
+  color:wheat;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  margin-right: 5.1875rem;
+  padding-top: 1.25rem;
+  padding-right: 1.25rem;
+}
+.a{
+  display: flex;
+  justify-content: center;
+  flex-flow: row nowrap;
+  align-items: center;
+  margin-right: 80px;
+  text-transform: uppercase;
+  padding-top: 1rem;
+  transition: transform .2s ease;
+}
+.a:hover{
+  transform: scale(1.8);
+ 
+}
+.gallery {
+  width: auto;
+  overflow:unset;
+  display: flex;
+  background-color: rgb(63, 62, 62);
+  gap: 16px;
+  display: flex;
+  justify-content: center;
+
+}
+
+.card {
+  position: relative;
+  left: 0px;
+  width: 400px;
+  height: 160px;
+  background-color: var(--background);
+  border-radius: 8px;
+  transition: 1000ms all;
+  transform-origin: center left;
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.5);
+  outline: 1px solid var(--background);
+  overflow: hidden;
+  align-items: center;
+  
+}
+
+.card img {
+  height: 160px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.card:hover {
+  cursor: pointer;
+  transform: scale(1.15);
+}
+
+.card:hover figcaption {
+  font-size: 1.2rem;
+  position: absolute;
+
+  display: flex;
+  align-items: end;
+
+  color:rgb(216, 143, 8);
+  left: 0px;
+  bottom: 0px;
+  padding-left: 12px;
+  padding-bottom: 10px;
+  
+}
+
+.card:hover ~ .card {
+  font-weight: bold;
+  cursor: pointer;
+  transform: translateX(22px);
+}
+
+/*MODIFICACION DEL SCROL*/
+/* width */
+::-webkit-scrollbar {
+  width: .625rem;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background:rgb(78, 77, 77);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background:rgb(248, 102, 4);
+  border-radius: 1rem;
+}
+/*FIN DE LA MODIFICACION DE SCROLL*/  
